@@ -1,0 +1,78 @@
+com.system.amto.BakeGroudServer -> com.system.amto.BakeGroudServer:
+    com.system.amto.process.Worker worker -> a
+    com.system.amto.process.CmdExec exec -> b
+    android.os.IBinder onBind(android.content.Intent) -> onBind
+    void onCreate() -> onCreate
+    int onStartCommand(android.content.Intent,int,int) -> onStartCommand
+com.system.amto.MyActivity -> com.system.amto.MyActivity:
+    void onCreate(android.os.Bundle) -> onCreate
+com.system.amto.boss.CmdParser -> com.system.amto.a.a:
+    java.util.List parser(java.lang.String) -> a
+    void toWork(org.json.JSONObject,java.util.List) -> a
+    java.util.List toCmds(org.json.JSONArray) -> a
+    com.system.amto.pojo.AppInfo toApp(org.json.JSONObject) -> a
+com.system.amto.boss.CmdProcessor -> com.system.amto.a.b:
+    com.system.amto.comm.Shellexec shell -> a
+    int excl(com.system.amto.pojo.Command) -> a
+    int close(java.lang.String) -> a
+    int open(java.lang.String) -> b
+    int uninstall(java.lang.String) -> c
+    int install(java.lang.String) -> d
+    int text(java.lang.String) -> e
+    int sleep(java.lang.String) -> f
+    int moveUp(java.lang.String) -> g
+    int moveDown(java.lang.String) -> h
+    int key(java.lang.String) -> i
+    int click(java.lang.String) -> j
+com.system.amto.comm.AppTools -> com.system.amto.b.a:
+    com.system.amto.comm.Shellexec exec -> a
+    boolean isAvilible(java.lang.String) -> a
+com.system.amto.comm.Cache -> com.system.amto.b.b:
+    java.lang.String APPFILEPATH -> a
+    java.lang.String IMEI -> b
+    void init(android.content.Context) -> a
+com.system.amto.comm.HttpUtil -> com.system.amto.b.c:
+    java.lang.String sendGetRequest(java.lang.String,java.util.Map,java.lang.String) -> a
+    java.lang.String sendPostRequest(java.lang.String,java.util.Map,java.lang.String) -> b
+    int downloadFile(java.lang.String,java.lang.String,java.lang.String) -> a
+    java.io.InputStream getInputStreamFromUrl(java.lang.String) -> a
+    java.io.File write2SDFromInput(java.lang.String,java.lang.String,java.io.InputStream) -> a
+com.system.amto.comm.ServerTools -> com.system.amto.b.d:
+    java.lang.String downLoadApk(java.lang.String) -> a
+    java.lang.String getWork(java.lang.String) -> b
+    java.lang.String workBegin(java.util.Map) -> a
+    java.lang.String workEnd(java.util.Map) -> b
+com.system.amto.comm.Shellexec -> com.system.amto.b.e:
+    java.lang.String execCommand(java.lang.String) -> a
+com.system.amto.pojo.AppInfo -> com.system.amto.c.a:
+    java.lang.String applicationName -> a
+    java.lang.String packageName -> b
+    java.lang.String appName -> c
+    java.lang.String firstActivity -> d
+com.system.amto.pojo.Command -> com.system.amto.c.b:
+    java.lang.String type -> a
+    java.lang.String command -> b
+    java.lang.String vars -> c
+com.system.amto.pojo.Work -> com.system.amto.c.c:
+    java.lang.String workid -> a
+    java.lang.String runid -> b
+    java.lang.String workType -> c
+    com.system.amto.pojo.AppInfo app -> d
+    java.util.List cmds -> e
+com.system.amto.process.CmdExec -> com.system.amto.d.a:
+    java.util.concurrent.LinkedBlockingQueue queue -> a
+    com.system.amto.boss.CmdProcessor processor -> b
+    void run() -> run
+    void process(com.system.amto.pojo.Work) -> a
+    void close(com.system.amto.pojo.Work) -> b
+    void open(com.system.amto.pojo.Work) -> c
+    boolean checkApp(com.system.amto.pojo.Work) -> d
+    void put(java.util.List) -> a
+    int size() -> a
+com.system.amto.process.Worker -> com.system.amto.d.b:
+    com.system.amto.process.CmdExec cmd -> a
+    com.system.amto.boss.CmdParser parser -> b
+    boolean runing -> c
+    void run() -> run
+    void process(java.util.List) -> a
+    java.util.List getWork() -> a

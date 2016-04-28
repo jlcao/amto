@@ -1,0 +1,7 @@
+com.system.amto.BakeGroudServer
+com.system.amto.BakeGroudServer: BakeGroudServer()
+com.system.amto.MyActivity
+com.system.amto.MyActivity: MyActivity()
+com.system.amto.R$drawable: int ic_launcher
+com.system.amto.R$layout: int main
+com.system.amto.R$string: int app_name
